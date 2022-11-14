@@ -1,0 +1,130 @@
+<html>
+<title>I am Future</title>  <head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="shortcut icon" href="https://static.vecteezy.com/ti/vecteur-libre/t2/2442856-f-letter-logo-template-vector-initials-sign-gratuit-vectoriel.jpg" />
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #aa0444;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: none;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="Market">Market</a>
+        <a href="Contact">Contact</a>
+        <a href="Recommandation">Recommand</a>
+        <a href="forecast">Forecast</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<div class="container">
+  <div class="content">
+    <div class="left-side">
+      <div class="address details">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="topic">Address</div>
+        <div class="text-one">Surkhet, NP12</div>
+        <div class="text-two">Birendranagar 06</div>
+      </div>
+      <div class="phone details">
+        <i class="fas fa-phone-alt"></i>
+        <div class="topic">Phone</div>
+        <div class="text-one">+31 6 251 60619</div>
+        
+      </div>
+      <div class="email details">
+        <i class="fas fa-envelope"></i>
+        <div class="topic">Email</div>
+        <div class="text-one">codinglab@gmail.com</div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="topic-text">Send us a message</div>
+      <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Enter your name">
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter your email">
+      </div>
+      <div class="input-box message-box">
+        
+      </div>
+      <div class="button">
+        <input type="button" value="Send Now" >
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+</body>

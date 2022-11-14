@@ -1,0 +1,234 @@
+<html>
+  <title>I am Future</title>
+  <link rel="shortcut icon" href="https://static.vecteezy.com/ti/vecteur-libre/t2/2442856-f-letter-logo-template-vector-initials-sign-gratuit-vectoriel.jpg" />
+    <!-- <link rel="stylesheet" href="../style/select_bar.css" /> -->
+   <style>
+   body {
+    margin: 0;
+    background-image: url('https://cdn.radiofrance.fr/s3/cruiser-production/2015/08/d0bffb63-73f0-40f8-aa92-60619186dd18/2048x640_f11otolia_84397526_subscription_monthly_m.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+        input,
+        select {
+            width: 150px;
+            height: 30px;
+            margin: 2px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        label, input {
+    display: block;
+}
+.Input{
+height:45px;
+width:130px;
+margin-left:10px;
+border:2px;
+margin-bottom:5px;
+background:transparent;
+border-bottom:1px solid rgb(227, 224, 35);
+font-size:19px;
+color:rgb(22, 2, 2);
+padding-left:8px;}
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  label {
+    display: inline-block;
+     text-align: right;
+     width: 200px;
+     font-size: 13px;
+      line-height: 16px;
+        /*
+    float: left;
+
+   */
+  }
+  button, select {
+    display: inline-block;
+    background-color: #fff;
+    border: solid 1px #BBC5CE;
+    margin: 0;
+    padding: 5px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+
+  }
+  select option{
+color:black
+}
+  .pred-btn{
+text-align:center;
+height:60px;
+width:150px;
+margin-left:500px;
+font-size:25px;
+background:linear-gradient(to left top,rgb(48, 53, 54),rgb(212, 186, 73)100%);color:white;
+margin-top:10px;
+border:2px solid rgb(12, 0, 0);
+border-radius:30px;
+}
+  .topnav a:hover {
+    background-color: #aa0444;
+    color: black;
+  }
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+  
+  .topnav a.active {
+    background-color: none;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  </style>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Home</a>
+        <a href="Market">Market</a>
+        <a href="Contact">Contact</a>
+        <a href="Recommandation">Recommand</a>
+        <a href="forecast">Forecast</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+</div>
+<br>
+<br>
+<form action="{{url_for('predict')}}" method="post">
+<label for="pet-select" ><h2>Price :</h2></label>
+<select  name="Price" class="Input">
+  <option selected="selected" value="">All</option>
+{% for i in data1 %}
+<option  value="{{i.price}}">{{i.price}}</option>
+{% endfor %}
+</select>
+<label for="pet-select"><h2>Market Cap :</h2> </label>
+
+<select name="marketCap" id="pet-select" class="Input">
+    <option selected="selected" value="">All</option>
+    {% for i in data2 %}
+    <option  value="{{i.market}}">{{i.market}}</option>
+    {% endfor %}
+</select>
+<label for="pet-select"><h2>24h Volume :</h2></label>
+
+<select name="24volume" id="pet-select" class="Input">
+  <option selected="selected">All</option>
+  {% for i in data2 %}
+  <option  value="{{i.market}}">{{i.market}}</option>
+  {% endfor %}
+</select>
+<br><br><br><br><br>
+<label for="pet-select"><h2>Coin Release Date: </h2></label>
+
+<select name="releaseDate" id="pet-select" class="Input">
+  <option value="1" selected="selected">All</option>
+
+  {% for i in data3 %}
+  <option  value="{{i.release}}">{{i.release}}</option>
+  {% endfor %}
+</select>
+<label for="pet-select"><h2>Trading Method: </h2></label>
+
+<select name="method" id="pet-select" class="Input">
+  <option value="1" selected="selected">All </option>
+  {% for i in data4 %}
+  <option  value="{{i.method}}">{{i.method}}</option>
+  {% endfor %}
+  
+</select>
+<label for="pet-select"><h2>Risk / Reward: </h2></label>
+
+<select name="risk" id="pet-select" class="Input" >
+    <option value="1">All</option>
+    {% for i in data5 %}
+    <option  value="{{i.risk}}">{{i.risk}}</option>
+    {% endfor %}
+</select>
+
+  <br><br><br>
+
+    <button type="submit" class="pred-btn"> Predict </button>
+
+ 
+ </form>
+  <br>
+  <table>
+    
+    <tr>
+      <th>Symbol</th>
+      <th>PriceUSd</th>
+      <th>Volume (24Hrs) in Million</th>
+    </tr>
+ 
+    {% for i in range(0, l) %}
+    <tr>
+      <td>{{symbol[i]}}</td>
+      <td>{{market[i]}}</td>
+      <td>{{change[i]}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+  <br>
+</body>
+</html>
