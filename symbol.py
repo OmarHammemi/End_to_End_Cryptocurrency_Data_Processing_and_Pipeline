@@ -111,3 +111,9 @@ simil={     'SHIB-USD':'Shiba Inu',
             'CVC-USD':'Civic'
             }
 coins=['SHIB','DOT','REQ','ZRX','MIR','RNDR','USDT','SOL','AVAX','OCEAN','INJ','XLM','ENJ','ZIL','FIL','ICP','PAXG','UMA','NEO','PLA','ICX','CRO','IMX','AMP','YGG','KAVA','COMP','TRX','REN','BADGER','QUICK','LTC','LSK','DUSK','XTZ','DGB','UNI','THETA','APE','CRV','CHZ','SAND','KNC','CLV','AAVE','TRIBE','ARPA','ETC','MKR','RLC','ADA','BCH','VGX','WAX','MATIC','AXS','REP','MASK','DASH','NMR','LPT','COTI','LRC','ALGO','STORJ','SNX','MLN','AUCTION','NEXO','LINK','XVG','BOND','ZEC','LUNA','MOB','VET','WAVES','XMR','DOGE','FORTH','EOS','SUSHI','SRM','BNT','ETH','ZEN','BAT','FTM','ATOM','PERP','GALA','BTC','XRP','ORN','STX','DCR','REEF','YFI','MANA','CVC']
+dt1=['>$1000','$100  -   $1000','$10   -   $100','$1  -  $10','$0.1 -  $1','<$0.1']
+dt2=['>$10 Billion','$1 Billion - $10 Billion','$100 million - $1 Billion','$10 Million - $100 Million','$1 Million - $10 Million','<$1 Million']
+dt3=['> 5 years','2 years - 5 years','1 years - 2 years','1 year - 6 Months','6 Months - 3 Months','< 3 Months']
+dt4=['Daily Trader(days-weeks)','Investor (months-year)']
+dt5=['High Risk  - High Reward','Low Risk  - Low Reward']
+

@@ -155,8 +155,3 @@ class Crypto:
                             return "Table created successfully........"
                     postgres(data)
                     return data
-c=Crypto()
-c.CoinCaP(simil)
-print('Coincap done')
-d=c.Polygon(coins)
-print(d)

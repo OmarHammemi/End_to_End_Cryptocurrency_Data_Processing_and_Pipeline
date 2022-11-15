@@ -157,7 +157,7 @@ tr:nth-child(even) {
 <select  name="Price" class="Input">
   <option selected="selected" value="">All</option>
 {% for i in data1 %}
-<option  value="{{i.price}}">{{i.price}}</option>
+<option  value="{{i}}">{{i}}</option>
 {% endfor %}
 </select>
 <label for="pet-select"><h2>Market Cap :</h2> </label>
@@ -165,7 +165,7 @@ tr:nth-child(even) {
 <select name="marketCap" id="pet-select" class="Input">
     <option selected="selected" value="">All</option>
     {% for i in data2 %}
-    <option  value="{{i.market}}">{{i.market}}</option>
+    <option  value="{{i}}">{{i}}</option>
     {% endfor %}
 </select>
 <label for="pet-select"><h2>24h Volume :</h2></label>
@@ -173,7 +173,7 @@ tr:nth-child(even) {
 <select name="24volume" id="pet-select" class="Input">
   <option selected="selected">All</option>
   {% for i in data2 %}
-  <option  value="{{i.market}}">{{i.market}}</option>
+  <option  value="{{i}}">{{i}}</option>
   {% endfor %}
 </select>
 <br><br><br><br><br>
@@ -183,7 +183,7 @@ tr:nth-child(even) {
   <option value="1" selected="selected">All</option>
 
   {% for i in data3 %}
-  <option  value="{{i.release}}">{{i.release}}</option>
+  <option  value="{{i}}">{{i}}</option>
   {% endfor %}
 </select>
 <label for="pet-select"><h2>Trading Method: </h2></label>
@@ -191,7 +191,7 @@ tr:nth-child(even) {
 <select name="method" id="pet-select" class="Input">
   <option value="1" selected="selected">All </option>
   {% for i in data4 %}
-  <option  value="{{i.method}}">{{i.method}}</option>
+  <option  value="{{i}}">{{i}}</option>
   {% endfor %}
   
 </select>
@@ -200,7 +200,7 @@ tr:nth-child(even) {
 <select name="risk" id="pet-select" class="Input" >
     <option value="1">All</option>
     {% for i in data5 %}
-    <option  value="{{i.risk}}">{{i.risk}}</option>
+    <option  value="{{i}}">{{i}}</option>
     {% endfor %}
 </select>
 
