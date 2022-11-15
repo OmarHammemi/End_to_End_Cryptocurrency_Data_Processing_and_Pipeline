@@ -3,15 +3,31 @@ from flask import Flask, render_template
 from flask import request
 import pandas as pd
 from symbol import simil,dt1,dt2,dt3,dt4,dt5
-# from mod import Predictions
-from Backend.pipeline import Crypto
+from mod import Predictions
+from pipeline import Crypto
 from apscheduler.schedulers.background import BackgroundScheduler
-from Backend.extract import postgres    
+from extract import postgres    
 app = Flask(__name__)
-from Backend.Functions import Predict
+from Functions import Predict
 from functools import reduce
 import pandas as pd
+
+
+
+##################################_______________________________________________________Crone Function_____________________________________________________________###############################################
 df=postgres()
+def ditrubition():
+    c= Crypto()
+    c.CoinCaP(simil)
+    c.Polygon(coins)
+    data=postgres()
+    Predictions(data)
+
+
+
+
+
+
 ##################################_______________________________________________________Home Page_____________________________________________________________###############################################
 
 
@@ -50,7 +66,6 @@ def predict():
             data = list(request.form.values())
             s,m,c,e=Predict(data)
             return render_template('rec.html',symbol=s,market=['%.3f' % float(m1) for m1 in m],change=['%.3f' % float(c1) for c1 in c],l=e,data1=dt1,data2=dt2, data3=dt3,data4=dt4, data5=dt5)
-#return render_template('recommand.html',data1=dt1,data2=dt2, data3=dt3,data4=dt4, data5=dt5)
 
 
 ##################################_______________________________________________________Forecasting Page_____________________________________________________________###############################################
@@ -67,7 +82,6 @@ def Forcast():
     data3= [ '%.2f' % elem for elem in pred['Day']],
     data4=[ '%.2f' % elem for elem in pred['Week']],
     data5=[ '%.2f' % elem for elem in pred['2Weeks']])
-#return render_template('rec.html',symbol=s,market=['%.3f' % float(m1) for m1 in m],change=['%.3f' % float(c1) for c1 in c],l=e,data1=dt1,data2=dt2, data3=dt3,data4=dt4, data5=dt5)
 
 
 
@@ -127,6 +141,8 @@ def coins(coin):
     data1=[{'Type':'1 Day '},{'Type':'7Days'},{'Type':'15Days'}])
 
 if __name__ == "__main__":
-       
+           
+    # sched = BackgroundScheduler(daemon=True)
+    # sched.add_job(ditrubition,'interval',minutes=10)
     app.run(debug=True) 
     
