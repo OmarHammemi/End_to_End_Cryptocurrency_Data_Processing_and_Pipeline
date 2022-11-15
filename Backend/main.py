@@ -4,11 +4,11 @@ from flask import request
 import pandas as pd
 from symbol import simil,dt1,dt2,dt3,dt4,dt5
 # from mod import Predictions
-from pipeline import Crypto
+from Backend.pipeline import Crypto
 from apscheduler.schedulers.background import BackgroundScheduler
-from extract import postgres    
+from Backend.extract import postgres    
 app = Flask(__name__)
-from Functions import Predict
+from Backend.Functions import Predict
 from functools import reduce
 import pandas as pd
 df=postgres()

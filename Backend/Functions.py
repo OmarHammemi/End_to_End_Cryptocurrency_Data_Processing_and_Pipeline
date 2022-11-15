@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from functools import reduce
 from flask import request
-from extract import postgres    
+from Backend.extract import postgres    
 ####################################################_______________________________________________________Main Function_____________________________________________________________3#########################################################
 def Predict(data):
             df=postgres()

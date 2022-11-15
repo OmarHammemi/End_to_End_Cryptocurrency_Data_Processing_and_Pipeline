@@ -3,9 +3,9 @@ import pickle
 import pandas as pd
 import numpy as np
 from symbol import coins
-from Functions import Analyse
+from Backend.Functions import Analyse
 sys.path.append('C:/Users/T14s/Desktop/Forecaster 1/Back_end')
-import extract as e
+import Backend.extract as e
 data=e.postgres()
 def Predictions(data):
                 dt=pd.DataFrame({'pair':data['pair'],'symbol':data['symbol'],'Open':data['open'],'High':data['high'],'Low':data['low'],'Close':data['close'],'Volume':data['volume'],'Adj Close':data['close']})
