@@ -2,14 +2,13 @@
 from flask import Flask, render_template
 from flask import request
 import pandas as pd
-from symbol import simil,dt1,dt2,dt3,dt4,dt5,coins
+from symbol import simil,dt1,dt2,dt3,dt4,dt5
 # from mod import Predictions
 from pipeline import Crypto
 from apscheduler.schedulers.background import BackgroundScheduler
 from extract import postgres    
-
 app = Flask(__name__)
-from Functions import Predict,Forecasting
+from Functions import Predict
 from functools import reduce
 import pandas as pd
 df=postgres()
@@ -115,10 +114,16 @@ def predict2():
 @app.route('/<coin>')
 def coins(coin):
     pred=pd.read_csv('C:/Users/T14s/Desktop/Forecaster 1/Back_end/prediction.csv')
-    coin,p,m,v,day,week,weeks,ln=Forecasting(pred)
+    p=df['open'].loc[df['symbol']== coin]
+    m=df['marketcap'].loc[df['symbol']== coin]
+    v=df['volume'].loc[df['symbol']== coin]
+    day=pred['Day'].loc[pred['Coins']== coin]
+    week=pred['Week'].loc[pred['Coins']== coin]
+    weeks=pred['2Weeks'].loc[pred['Coins']== coin]
     return render_template('coins.html',coin=coin,market=['%.2f' % float(m1) for m1 in m][0],
         price=['%.2f' % float(p1) for p1 in p][0],volume=['%.2f' % float(v1) for v1 in v][0],
         day='%.3f' % float(day), week='%.3f' % float(week),weeks='%.3f' % float(weeks),
+
     data1=[{'Type':'1 Day '},{'Type':'7Days'},{'Type':'15Days'}])
 
 if __name__ == "__main__":
