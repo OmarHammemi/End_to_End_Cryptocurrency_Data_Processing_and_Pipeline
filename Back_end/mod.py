@@ -47,3 +47,4 @@ def Predictions(data):
                 predictions=pd.DataFrame({'Coins':names,'Day':d,'Week':w,'2Weeks':w2})
                 predictions.to_csv('Back_end/prediction.csv',index=False)
                 return 'prediction Done ...'
+Predictions(data)
