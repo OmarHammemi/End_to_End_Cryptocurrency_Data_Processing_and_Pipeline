@@ -26,3 +26,12 @@ cd CryptoDataFlow
 ```bash
 pip install -r requirements.txt
 ```
+# Configure API Keys:
+- Add your API keys for Polygon.io and CoinMarketCap in config/api_keys.py.
+PostgreSQL Setup:
+- Set up your PostgreSQL connection in config/db_config.py.
+Run the Data Pipeline:
+```bash
+Copy code
+python pipeline.py
+```
