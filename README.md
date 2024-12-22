@@ -21,3 +21,8 @@ This project tracks cryptocurrency flows and provides actionable insights using 
 ```bash
 git clone https://github.com/yourusername/CryptoDataFlow.git
 cd CryptoDataFlow
+```
+# Install Dependencies:
+```bash
+pip install -r requirements.txt
+```
