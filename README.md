@@ -1,14 +1,23 @@
-# IAMFUTURE
-The Project Devided into 2 main big Parts :         <br />
+# Cryptocurrency Flow Detection & Recommendation System
 
-         
+This project tracks cryptocurrency flows and provides actionable insights using a data pipeline. It extracts, processes, and analyzes market data to offer personalized recommendations for traders.
 
-First id Data pipeline that include Data extraxtion from API(Pipeline.py)
-<br />
-Our API: 1. https://polygon.io/     
-         2. https://coinmarketcap.com/
-         <br />
-Then The Extraction from PostgreSQL (extract.py) Then build Our Prediction Variables (Mod.py) using more then 300 pretrained model incluse 1Day , 7 Days and 15 Days
+## Project Breakdown
 
+### 1. Data Extraction
+- **APIs**: Fetch real-time data from Polygon.io and CoinMarketCap.
+- **PostgreSQL**: Retrieve historical cryptocurrency data for deeper analysis.
 
+### 2. Cryptocurrency Flow Detection
+- Detects large market movements such as significant wallet transfers, whale activities, and token transfers.
 
+### 3. Recommendation System
+- Provides recommendations based on detected flows, helping users make informed decisions.
+- Offers predictions for 1 day, 7 days, and 15 days ahead.
+
+## Setup & Installation
+
+### Clone the Repo:
+```bash
+git clone https://github.com/yourusername/CryptoDataFlow.git
+cd CryptoDataFlow
